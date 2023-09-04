@@ -24,10 +24,10 @@ jobs:
         run: |
           echo "开始进行release构建"
           chmod +x gradlew
-          ./gradlew app:assembleRelease
+          ./gradlew app:assemble
       - name : upload apk
         uses: actions/upload-artifact@master
         if: always()
         with:
           name: xupdate_apk
-          path: ${{ github.workspace }}/app/build/outputs/apk/release
+          path: ${{ github.workspace }}/app/build/outputs/apk

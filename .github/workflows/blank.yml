@@ -24,6 +24,7 @@ jobs:
         run: |
           echo "开始进行release构建"
           chmod +x gradlew
+          wget  -O /home/runner/work/ChatGptApp/ChatGptApp/local.properties
           ./gradlew app:assemble
       - name : upload apk
         uses: actions/upload-artifact@master

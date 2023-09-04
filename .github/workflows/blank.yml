@@ -1,16 +1,7 @@
 name: Android CI
 
 on:
-  release:
-    types: [published]
-  push:
-    branches:
-      - master
-    tags:
-      - '2.*'
-  pull_request:
-    branches:
-      - master
+  workflow_dispatch:
 
 jobs:
   build:
@@ -39,4 +30,4 @@ jobs:
         if: always()
         with:
           name: xupdate_apk
-          path: ${{ github.workspace }}/app/build/outputs/apk
+          path: ${{ github.workspace }}/app/build/outputs/apk/release
